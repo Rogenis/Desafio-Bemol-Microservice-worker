@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "MicroserviceWorker";
+
+service Worker {
+    rpc ProcessItem (ProcessItemRequest) returns (ProcessItemResponse);
+}
+
+message ProcessItemRequest {
+    string Id = 1;
+    string Data = 2;
+}
+
+message ProcessItemResponse {
+    bool Success = 1;
+    string Message = 2;
+}
